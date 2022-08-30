@@ -1,11 +1,14 @@
 <!-- Comienza el Header -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPOsrkLLIfcb0VnjvEtRPxwQp7ucA29XU"></script>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <i-buttons slot="start">
       <ion-menu-button menu="menuPrincipal"></ion-menu-button>
     </i-buttons>
     <ion-title>
-      Bienvenido
+      <div id="map"></div>
+      Bienvenido: {{data.usuario}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -33,6 +36,7 @@
     <!-- Contenido de un Card -->
   </ion-card>
   <!-- Termina un Card -->
+  <div> id="map"</div>
 </ion-content>
 <ion-searchbar value="Ionic"></ion-searchbar>
 
