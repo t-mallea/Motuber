@@ -1,8 +1,7 @@
 /** Importaciones de librerias a usar */
 
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-declare var google;
 
 // Decorador Componente este indica que el Home Page es un Componente
 @Component({
@@ -10,7 +9,7 @@ declare var google;
   templateUrl: 'home.page.html', // Arhivo HTML de la visual a trabajar
   styleUrls: ['home.page.scss'], // Archivo/s de estilos
 })
-export class HomePage implements OnInit {
+export class HomePage {
   map = null;
   data: any; // Generamos una variable Any (permite cualquier valor)
 
@@ -32,26 +31,10 @@ export class HomePage implements OnInit {
       }else{this.router.navigate(["/login"])} // Si no tiene extra la navegacion actual navegar al login
     });
 
-    loadMap() {
-      // create a new map by passing HTMLElement
-      const mapEle: HTMLElement = document.getElementById('map');
-      // create LatLng object
-      const myLatLng = {lat: 4.658383846282959, lng: -74.09394073486328};
-      // create map
-      this.map = new google.maps.Map(mapEle, {
-        center: myLatLng,
-        zoom: 12
-      });
-    
-      google.maps.event.addListenerOnce(this.map, 'idle', () => {
 
-        mapEle.classList.add('show-map');
-      });
     }
 
 
 
 
   }
-  
-}
