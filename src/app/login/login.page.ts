@@ -36,7 +36,7 @@ export class LoginPage implements OnInit {
   async presentLoadingWithOptions() {
     const loading = await this.loadingController.create({
       //spinner: null,
-      duration: 3000,
+      duration: 300,
       message: 'Iniciando sesion...',
       //translucent: true,
       //cssClass: 'custom-class custom-loading'
